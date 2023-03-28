@@ -1,0 +1,18 @@
+spring:
+  cloud:
+    nacos:
+      server-addr: 172.30.2.30:8848
+      discovery:
+        metadata:
+          x-version: 1.0  #在nacos中注入元数据，用于指定版本号负载均衡，在请求头中上送x-version=1.0
+      #  namespace: 3c9885d2-e585-4586-acf2-bc009a1c0d06
+
+      # 指定配置
+#      extension-configs:
+#        - data-id: datasource.yaml
+#          refresh: true
+#        - data-id: common.yaml
+#          refresh: true
+logging:
+  level:
+    com.keaizhale: DEBUG

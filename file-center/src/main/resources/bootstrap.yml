@@ -1,0 +1,15 @@
+server:
+  port: 7010
+#  servlet:
+#    context-path: /api-file
+
+spring:
+  application:
+    name: file-center
+  profiles:
+    active: dev # 启动环境，打包前记得确认，目前环境有dev、sit、uat、prod
+  main:
+    allow-bean-definition-overriding: true
+  cloud:
+    bootstrap:
+      enabled: true

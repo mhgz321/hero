@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration debug="false">
+<!--<property name="APP_NAME" value="logback-dubbo-provider"/>-->
+<springProperty name="APP_NAME" scope="context" defaultValue="hero-app" source="spring.application.name"/>
+<!--<property name="LOG_HOME" value="./logs" />-->
+<springProperty name="LOG_HOME" scope="context" source="logging.file" defaultValue="../logs/application/${APP_NAME}"/>
+<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+        <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n</pattern>
+    </encoder>
+</appender>
+<appender name="FILE"  class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <File>${LOG_HOME}/${APP_NAME}.log</File>
+    <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+        <FileNamePattern>${LOG_HOME}/${APP_NAME}.log.%d{yyyy-MM-dd}.%i.log</FileNamePattern>
+        <MaxHistory>30</MaxHistory>
+        <maxFileSize>1000MB</maxFileSize>
+    </rollingPolicy>
+    <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+        <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n</pattern>
+    </encoder>
+</appender>
+
+<!-- 这里替换成AspectLogbackAsyncAppender -->
+<appender name="ASYNC_FILE" class="com.yomahub.tlog.core.enhance.logback.async.AspectLogbackAsyncAppender">
+    <discardingThreshold>0</discardingThreshold>
+    <queueSize>2048</queueSize>
+    <includeCallerData>true</includeCallerData>
+    <appender-ref ref="FILE"/>
+</appender>
+
+<root level="INFO">
+    <appender-ref ref="STDOUT" />
+    <appender-ref ref="ASYNC_FILE" />
+</root>
+</configuration>

@@ -1,0 +1,13 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: hero-gateway
+  profiles:
+    active: dev # 启动环境，打包前记得确认，目前环境有dev、sit、uat、prod
+  main:
+    allow-bean-definition-overriding: true
+#  cloud:
+#    bootstrap:
+#      enabled: true
