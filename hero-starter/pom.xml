@@ -18,6 +18,7 @@
         <module>hero-common-spring-boot-starter</module>
         <module>hero-loadbalancer-spring-boot-starter</module>
         <module>hero-logging-spring-boot-starter</module>
+        <module>hero-satoken-spring-boot-starter</module>
     </modules>
     <dependencies>
         <dependency>
