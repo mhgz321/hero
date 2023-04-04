@@ -4,6 +4,7 @@ import com.keaizhale.file.message.FileErrorEnum;
 import com.keaizhale.hero.common.bean.R;
 import com.keaizhale.hero.common.exception.ServiceException;
 import com.keaizhale.hero.common.message.ServiceErrorEnum;
+import com.keaizhale.hero.logging.annotation.HeroLog;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
@@ -32,6 +33,7 @@ public class TestController {
     }
 
     @PostMapping("/valition")
+    @HeroLog(name = "测试", operation = "#test.name")
     public R<Test> valition(@Validated @RequestBody Test test) {
         return R.succeed(test);
     }

@@ -1,0 +1,2 @@
+com.keaizhale.hero.logging.TtlMDCAdapterInitializer
+com.keaizhale.hero.logging.aspect.HeroLogAspect
