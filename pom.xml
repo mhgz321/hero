@@ -22,11 +22,13 @@
 		<spring-boot.version>3.0.4</spring-boot.version>
 		<spring-cloud.version>2022.0.1</spring-cloud.version>
 		<spring-cloud-alibaba.version>2022.0.0.0-RC1</spring-cloud-alibaba.version>
-		<fastjson.version>2.0.9</fastjson.version>
 		<fastjson2.version>2.0.26</fastjson2.version>
+		<sa-token.version>1.34.0</sa-token.version>
 		<hero-common.version>0.0.1-SNAPSHOT</hero-common.version>
 		<hero-loadbalancer.version>0.0.1-SNAPSHOT</hero-loadbalancer.version>
 		<file-center-api.version>0.0.1-SNAPSHOT</file-center-api.version>
+		<hero-satoken.version>0.0.1-SNAPSHOT</hero-satoken.version>
+		<hutool.version>5.8.16</hutool.version>
 	</properties>
 	<modules>
 		<module>hero-starter</module>
@@ -78,6 +80,31 @@
 				<artifactId>fastjson2</artifactId>
 				<version>${fastjson2.version}</version>
 			</dependency>
+			<dependency>
+				<groupId>cn.dev33</groupId>
+				<artifactId>sa-token-reactor-spring-boot3-starter</artifactId>
+				<version>${sa-token.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>cn.dev33</groupId>
+				<artifactId>sa-token-spring-boot3-starter</artifactId>
+				<version>${sa-token.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>cn.dev33</groupId>
+				<artifactId>sa-token-core</artifactId>
+				<version>${sa-token.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>cn.dev33</groupId>
+				<artifactId>sa-token-jwt</artifactId>
+				<version>${sa-token.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>cn.hutool</groupId>
+				<artifactId>hutool-jwt</artifactId>
+				<version>${hutool.version}</version>
+			</dependency>
 
 
 			<dependency>
@@ -89,6 +116,11 @@
 				<groupId>com.keaizhale</groupId>
 				<artifactId>hero-loadbalancer-spring-boot-starter</artifactId>
 				<version>${hero-loadbalancer.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.keaizhale</groupId>
+				<artifactId>hero-satoken-spring-boot-starter</artifactId>
+				<version>${hero-satoken.version}</version>
 			</dependency>
 
 			<dependency>

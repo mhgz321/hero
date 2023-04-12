@@ -1,0 +1,2 @@
+com.keaizhale.hero.redis.configuration.RedisConfiguration
+com.keaizhale.hero.redis.repository.RedisRepository

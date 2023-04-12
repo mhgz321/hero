@@ -8,8 +8,18 @@ spring:
             - Path=/api-file/**
           filters:
             - StripPrefix=1 #去掉Path第一个前缀
+        - id: uaa #认证中心
+          uri: lb://uaa-center
+          predicates:
+            - Path=/api-uaa/**
+          filters:
+            - StripPrefix=1 #去掉Path第一个前缀
         # 表示当访问http://localhost:8080/httpbin时将转发到http://172.30.2.20/actuator/health
 #        - id: default_path_to_httpbin
 #          uri: http://172.30.2.20/actuator/health
 #          predicates:
 #            - Path= /httpbin
+
+security:
+  ignores:
+    - /api-uaa/login
